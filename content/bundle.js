@@ -14,6 +14,123 @@
 	app.constant('API_BASE', location.hostname === 'localhost' ? '//localhost:3000/api/':'https://cct-project1.herokuapp.com/api/');
 })();
 
+// Signing in a User
+(function(){
+	angular
+		.module('project1.auth.signin', ['ui.router'])
+		.config(signinConfig);
+
+		function signinConfig($stateProvider) {
+			$stateProvider
+				.state('signin', {
+					url: '/signin',
+					templateUrl: '/components/auth/signin.html',
+					controller: SignInController,
+					controllerAs: 'ctrl',
+					bindToController: this
+				});
+		}
+
+		signinConfig.$inject = ['$stateProvider'];
+
+		// UsersService is used throughout this application to gather or create data regarding a user:
+		function SignInController($state, UsersService) { // The signin component uses $state and UsersService as dependencies.
+			var vm = this;
+			vm.login = function() {
+				UsersService.login(vm.email, vm.password).then(function(response){
+					console.log(response);
+					$state.go('create');
+				});
+			};
+		}
+
+		SignInController.$inject = ['$state', "UsersService"];
+})(); 
+
+// This configuration (config) file is found in a single file to keep the components together.
+// The config and controller for each feature will use the .$inject directive from Angular to inject dependencies.
+(function(){
+	angular
+		.module('project1.auth.signup', ['ui.router'])
+		.config(signupConfig);
+
+		function signupConfig($stateProvider) { 
+		// $stateProvider is from ui-router and is the method through which url routing is handled.
+			$stateProvider
+				.state('signup', {
+					url: '/signup',
+					// defines this component as the state of signup and provides the url route
+					templateUrl: '/components/auth/signup.html',
+					// templateUrl is the html the component will use
+					controller: SignUpController,
+					// controller indicates which controller will dictate the behavior of this view
+					controllerAs: 'ctrl',
+					// controllerAs creates an alias so a developer doesn’t have to type SignUpController.<function or object>
+					bindToController: this
+					// bindToController binds the scope of the view to the scope of this controller and eliminates the need to use $scope
+				});
+		}
+
+		signupConfig.$inject = ['$stateProvider'];
+
+		function SignUpController($state, UsersService) {
+			var vm = this;
+			// "var vm = this" is how the binding of the controller to the view is completed.
+			vm.user = {};
+			// "vm.user = {}" establishes an object to build the username and password inside.
+			vm.message = "Sign up for an account!"
+			// example of expressions and how vm and this scope work together
+			vm.submit = function() {
+				UsersService.create(vm.user)
+					.then(function(response){
+				// "ng-model" and "ng-submit" (not in this file) create the vm.user object that "UserService.create" uses to sign a new user up.
+				// The .then is how the SignUpController handles the resolved promise and then routes the app to the "define" feature of project1.
+					console.log(response); // displays response data in console
+					$state.go('create');
+					// $state.go(‘define’) is how ui-route changes from state (url) to other states.
+				});
+			};
+		}
+
+		SignUpController.$inject = ['$state', 'UsersService'];
+		// SignUpController has $state and UsersService injected into it.
+})();
+
+// This file will "power" the custom directive.
+(function() {
+	angular.module('project1')
+	.directive('userlinks',
+		function() {
+			UserLinksController.$inject = [ '$state', 'CurrentUser', 'SessionToken' ];
+			function UserLinksController($state, CurrentUser, SessionToken) {
+				var vm = this;
+				vm.user = function() {
+					return CurrentUser.get();
+				};
+
+				vm.signedIn = function() {
+					return !!(vm.user().id);
+				};
+
+				vm.logout = function() {
+					CurrentUser.clear();
+					SessionToken.clear();
+					$state.go('signin');
+				};
+			}
+
+			// Configure the directive:
+			return {
+				// Create an isolated scope to isolate the data to a portion of the application:
+				scope: {},
+				controller: UserLinksController,
+				controllerAs: 'ctrl',
+				bindToController: true,
+				templateUrl: '/components/auth/userlinks.html'
+			};
+		});
+})();
+
 // For 2nd sprint, change this file to create a product.
 
 (function() {
@@ -222,123 +339,6 @@
 // 		};
 // 	}
 // })();
-
-// Signing in a User
-(function(){
-	angular
-		.module('project1.auth.signin', ['ui.router'])
-		.config(signinConfig);
-
-		function signinConfig($stateProvider) {
-			$stateProvider
-				.state('signin', {
-					url: '/signin',
-					templateUrl: '/components/auth/signin.html',
-					controller: SignInController,
-					controllerAs: 'ctrl',
-					bindToController: this
-				});
-		}
-
-		signinConfig.$inject = ['$stateProvider'];
-
-		// UsersService is used throughout this application to gather or create data regarding a user:
-		function SignInController($state, UsersService) { // The signin component uses $state and UsersService as dependencies.
-			var vm = this;
-			vm.login = function() {
-				UsersService.login(vm.email, vm.password).then(function(response){
-					console.log(response);
-					$state.go('create');
-				});
-			};
-		}
-
-		SignInController.$inject = ['$state', "UsersService"];
-})(); 
-
-// This configuration (config) file is found in a single file to keep the components together.
-// The config and controller for each feature will use the .$inject directive from Angular to inject dependencies.
-(function(){
-	angular
-		.module('project1.auth.signup', ['ui.router'])
-		.config(signupConfig);
-
-		function signupConfig($stateProvider) { 
-		// $stateProvider is from ui-router and is the method through which url routing is handled.
-			$stateProvider
-				.state('signup', {
-					url: '/signup',
-					// defines this component as the state of signup and provides the url route
-					templateUrl: '/components/auth/signup.html',
-					// templateUrl is the html the component will use
-					controller: SignUpController,
-					// controller indicates which controller will dictate the behavior of this view
-					controllerAs: 'ctrl',
-					// controllerAs creates an alias so a developer doesn’t have to type SignUpController.<function or object>
-					bindToController: this
-					// bindToController binds the scope of the view to the scope of this controller and eliminates the need to use $scope
-				});
-		}
-
-		signupConfig.$inject = ['$stateProvider'];
-
-		function SignUpController($state, UsersService) {
-			var vm = this;
-			// "var vm = this" is how the binding of the controller to the view is completed.
-			vm.user = {};
-			// "vm.user = {}" establishes an object to build the username and password inside.
-			vm.message = "Sign up for an account!"
-			// example of expressions and how vm and this scope work together
-			vm.submit = function() {
-				UsersService.create(vm.user)
-					.then(function(response){
-				// "ng-model" and "ng-submit" (not in this file) create the vm.user object that "UserService.create" uses to sign a new user up.
-				// The .then is how the SignUpController handles the resolved promise and then routes the app to the "define" feature of project1.
-					console.log(response); // displays response data in console
-					$state.go('create');
-					// $state.go(‘define’) is how ui-route changes from state (url) to other states.
-				});
-			};
-		}
-
-		SignUpController.$inject = ['$state', 'UsersService'];
-		// SignUpController has $state and UsersService injected into it.
-})();
-
-// This file will "power" the custom directive.
-(function() {
-	angular.module('project1')
-	.directive('userlinks',
-		function() {
-			UserLinksController.$inject = [ '$state', 'CurrentUser', 'SessionToken' ];
-			function UserLinksController($state, CurrentUser, SessionToken) {
-				var vm = this;
-				vm.user = function() {
-					return CurrentUser.get();
-				};
-
-				vm.signedIn = function() {
-					return !!(vm.user().id);
-				};
-
-				vm.logout = function() {
-					CurrentUser.clear();
-					SessionToken.clear();
-					$state.go('signin');
-				};
-			}
-
-			// Configure the directive:
-			return {
-				// Create an isolated scope to isolate the data to a portion of the application:
-				scope: {},
-				controller: UserLinksController,
-				controllerAs: 'ctrl',
-				bindToController: true,
-				templateUrl: '/components/auth/userlinks.html'
-			};
-		});
-})();
 
 (function(){
 	angular.module('project1')
