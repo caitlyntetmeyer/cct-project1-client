@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="col-sm-12">
+		<h2>Update a Shirt</h2>
+		<label>Title</label>
+		<input type="hidden" class="form-control" ng-model="ctrl.updateShirt.id" />
+		<input type="text" class="form-control" ng-model="ctrl.updateShirt.result" />
+
+		<label>Description:</label>
+		<select class="form-control" ng-options="item.desc as item.desc for item in ctrl.userDefinitions" ng-model="ctrl.updateProduct.def">
+		</select>
+
+		<label>Image:</label>
+		<textarea class="form-control" rows="1" ng-model="ctrl.updateProduct.desc"></textarea>
+		<p ng-show="ctrl.saved">You updated a shirt</p>
+		<br>
+		<button id="shirt-save" class="btn btn-primary" ng-click="ctrl.updateSingleProduct()">Update Shirt</button>
+	</div>
+</div>

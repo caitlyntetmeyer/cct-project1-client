@@ -1,0 +1,21 @@
+<div class="container">
+
+	<h2>Create a shirt</h2>
+
+	<label for="def-description">Title of Shirt:</label>
+	<textarea class="form-control" ng-model="ctrl.shirt.title" id="def-title" rows="1" ></textarea>
+
+	<label for="def-logtype">Description of Shirt:</label>
+	<textarea class="form-control" ng-model="ctrl.shirt.desc" id="def-description" rows="3" ></textarea>
+
+	<label for="def-logtype">Image URL:</label>
+	<textarea class="form-control" ng-model="ctrl.shirt.image" id="def-image" rows="1" ></textarea>
+
+	<!-- ctrl.saved (with a "d") is implemented below. -->
+	<!-- ng-show will show the html when the value inside is true: -->
+	<p ng-show="ctrl.saved">You created a new shirt!</p>
+	<br>
+	<!-- ctrl.save() (no "d") is implemented: -->
+	<button id="def-save" ng-click="ctrl.save()" class="btn btn-primary">Save</button>
+
+</div> <!-- /.container -->

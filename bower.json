@@ -1,0 +1,25 @@
+{
+  "name": "project1angular",
+  "description": "Bisexual Apparel App",
+  "main": "app.js",
+  "authors": [
+    "caitlyn tetmeyer"
+  ],
+  "license": "MIT",
+  "homepage": "https://caitlyntetmeyer.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loader": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "angular-socket-io": "^0.7.0",
+    "jquery": "^3.2.1",
+    "angular": "^1.6.5"
+  }
+}

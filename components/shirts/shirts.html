@@ -1,0 +1,22 @@
+<!-- This is the HTML for the products. -->
+<div class="container">
+	<div class="col-sm-12">
+
+		<h2>Products</h2>
+
+		<label>Title:</label>
+		<input type="text" class="form-control" ng-model="ctrl.product.result"/>
+
+		<label>Description:</label>
+		<select class="form-control" ng-options="shirt.desc as shirt.desc for shirt in ctrl.userDefinitions" ng-model='ctrl.product.def'>
+		</select>
+
+		<label>Image:</label>
+		<textarea class="form-control" rows="3" ng-model="ctrl.product.desc"></textarea>
+
+		<p ng-show="ctrl.saved">You saved a product</p>
+		<br>
+		<button id="product-save" class="btn btn-primary" ng-click="ctrl.save()">Save</button>
+		
+	</div> <!-- /.col-sm-12 -->
+</div> <!-- /.container -->

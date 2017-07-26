@@ -1,0 +1,350 @@
+/*
+For larger text:
+font-family: 'Crimson Text', serif;
+
+For smaller text:
+font-family: 'Open Sans', sans-serif;
+*/
+
+/*Common elements*/
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+body {
+	font-size: 95%;
+	color: snow;
+	font-family: 'Open Sans', sans-serif;
+	background: indigo url("img/purplebackground.jpg") no-repeat fixed top center;
+	padding: 0;
+	margin: 0;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}
+
+h2.margin-left {
+	margin-left: 10px;
+}
+
+.shop-for-bisexual {
+	color: white !important;
+	font-size: 2em !important;
+	margin-bottom: 15px;
+}
+
+.my-shirt {
+	color: white !important;
+	font-size: 1.5em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-family: 'Crimson Text', serif;
+	color: snow;
+	font-size: 3.7em;
+	padding: 0;
+	margin: -0.1em 0 0 0;
+}
+h2, h3 {
+	color: white !important;
+	font-size: 2.3em;
+	margin-bottom: 10px;
+}
+p, label {
+	color: white;
+	font-size: 16px;
+	line-height: 1.3em;
+	padding: 0px;
+	margin: 0px 10px 5px 0px;
+}
+ol {
+	font-size: 1.3em;
+	margin: 0 0 0 2em;
+	padding: 0 0 0 0.8em;
+}
+ol li {
+	margin: 0;
+	padding: 0 0 .2em;
+}
+a, a:visited {
+	color: #B82A74;
+}
+a:hover {
+	color: #C81B75;
+}
+hr {
+	padding: 0;
+	margin: 1.5em 1.5em .75em .5em;
+}
+.contentWrapper {
+	margin: 0 auto;
+	max-width: 1170px;
+	padding: 0 8px;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+/*Header*/
+header {
+	padding: 3em 0;
+	margin: 0 0 2em;
+	background: purple url(img/biflagcover.jpg) center 0px;
+}
+header h1 {
+	font-family: 'Crimson Text', serif;
+	color: white;
+	font-size: 4.4em;
+	letter-spacing: -0.025em;
+	margin: 0;
+	text-shadow: 1px 2px 5px black;
+	text-transform: uppercase;
+}
+/*h2 {
+	font-size: 3em;
+	font-family: 'Crimson Text', serif;
+	color: #C81B75;
+	margin: -.4em 0 0 1em;
+	letter-spacing: 0.02em;
+}*/
+
+/*Nav Bars*/
+nav {
+	color: black;
+	font-size: 1.1em;
+	letter-spacing: 0em;
+	padding: 1em 1em 0.5em;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	/* Make the list items be horizontal, not vertical. */
+	display: inline-block;
+	margin: 0;
+
+}
+nav li a, nav li a:visited {
+	/* Remove the underline. */
+	text-decoration: none;
+	color: snow;
+	padding: 0.2em 0.8em;
+}
+nav li a:hover {
+	text-decoration: none;
+	color: white;
+	background-color: rgba(38, 3, 57, .6);
+}
+nav#utilityMenu {
+	float: right;
+	margin: -43px 0 0 0;
+	padding: 0.35em;
+	/*background-color: rgba(255, 255, 255, 0.5);*/
+	background-color: rgba(37, 3, 57, 0.7);
+	height: 40px;
+}
+nav#utilityMenu li {
+	padding: 0 5px;
+	vertical-align: middle;
+}
+nav#utilityMenu ul li.acctNav a, nav#utilityMenu ul li.acctNav a:visited {
+	color: white;
+	display: inline-block;
+	text-decoration: none;
+	height: 1.3em;
+	padding: 0.5em;
+	margin: -0.4em 0 0 0;
+	font-size: 14px;
+}
+nav#utilityMenu ul li.acctNav a:hover {
+	color: #C81B75
+}
+nav#utilityMenu li a, nav#utilityMenu li a:visited {
+	padding: 0;
+}
+nav#utilityMenu li a:hover {
+	background-color: transparent;
+}
+nav#utilityMenu ul li input#search {
+	vertical-align: middle;
+	margin: 0 0 0 1em;
+}
+
+/*Sidebar Section*/
+section#sidebar {
+	width: 25%;
+	float: right;
+	position: relative;
+	display: block;
+	background-color: rgba(0, 0, 139, 0.5);
+	margin: 0.5em 0 0.5em 0.5em;
+	padding: 1em 1.5em 2em 1.5em;
+	border-left: snow solid 5px;
+	color: white;
+	border-radius: 15px;
+}
+section#sidebar h1 {
+	font-size: 34px;
+}
+section#sidebar h1 a {
+	color: #C81B75 !important;
+}
+section#sidebar p a {
+	color: #C81B75;
+}
+/*Main Section*/
+section#main {
+	background-color: rgba(37, 3, 57, 0.7);
+	margin: 0 0 2em 2em;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 2em;
+	box-shadow: 1px 1px 15px black;
+	width: 69%;
+}
+section#main h1 {
+	color: snow;
+	padding: 0 0 0 8px;
+}
+section#main img {
+	border-radius: 7px;
+}
+
+#bisexuWhale {
+	background-color: white;
+	border-radius: 7px;
+}
+
+.sign-up {
+	color: white !important;
+	text-decoration: underline;
+}
+
+.sign-up:hover {
+	color: #C81B75 !important;
+	background-color: white !important;
+	font-weight: bold;
+}
+
+input {
+	color: black !important;
+}
+
+button {
+	color: #C81B75 !important;
+	background-color: white !important;
+	display: inline-block;
+	margin: 0.4em 0.75em 0 0;
+	padding: 0.3em 0.6em;
+	text-transform: uppercase;
+	border-color: pink;
+	font-size: 0.8em;
+}
+button:hover {
+	color: white !important;
+	background-color: #C81B75 !important;
+}
+button.deeppink {
+	color: #C81B75 !important;
+	background-color: white !important;
+}
+button.deeppink:hover {
+	color: white !important;
+	background-color: #C81B75 !important;
+}
+
+button.btn-margin-bottom {
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+button.btn-margin-bottom:hover {
+	color: white !important;
+	background-color: #C81B75 !important;
+	font-weight: bold !important;
+}
+
+.panel {
+	float: left;
+	position: relative;
+	width: 30%;
+	height: 450px;
+	margin: 0 0.5em 2em 0.5em;
+	padding: 1em;
+	background-color: rgba(37, 3, 57, 0.7);
+	border: pink solid 1px;
+	border-radius: 0.6em;
+}
+section div.panel img.shirtType {
+	width: 100%;
+}
+
+/*Clear*/
+div.clear {
+	clear: both;
+	font-size: 1%
+}
+
+/*Footer*/
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -25px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 25px; 
+}
+.site-footer {
+	background-color: #C81B75;
+	font-size: 12px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	padding: 20px 10px 40px 10px;
+	clear: both;
+	/*position:fixed;*/
+	bottom:0;
+	
+}
+footer ul#menuFooter {
+	display: inline-block;
+	list-style: none;
+	margin: 0 0 0 0.6em;
+	padding: 0;
+}
+footer ul li {
+	display: inline-block;
+	padding: 0 0.7em 0 0;
+	margin: 0;
+}
+/*
+footer ul li::before {
+	content: "| ";
+	padding-right: 0.7em;
+}
+*/
+footer a, footer a:visited {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 5px;
+	color: indigo;
+	font-weight: bold;
+	text-decoration: none;
+}
+footer a:hover {
+	color: indigo;
+	text-decoration: underline;
+}

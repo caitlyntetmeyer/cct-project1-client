@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="col-sm-12">
+
+		<div class="row">
+			<h2 class="margin-left">My Bisexual-Apparel Showcase</h2>
+			<button class="deeppink btn-margin-bottom" ng-click="ctrl.goCreate()">Create</button>
+			<button class="deeppink btn-margin-bottom" ng-click="ctrl.signOut()">Sign Out</button>
+		</div>
+
+		<div style="overflow-y: auto" ng-repeat="shirt in ctrl.products" class="panel col-sm-4" id="flag">
+			<img src="{{ shirt.image }}" class="img-responsive shirtType" alt="Shirt" border="0">
+			<h2 class="my-shirt">{{ shirt.title }}</h2>
+			<p>{{ shirt.desc }}</p>
+			<button class="deeppink" ng-click="ctrl.updateProduct(shirt)">Update</button>
+			<button class="deeppink" ng-click="ctrl.deleteProduct(shirt)">Delete</button>
+		</div> <!-- /style -->
+	</div> <!-- class="col-sm-12" -->
+</div>
