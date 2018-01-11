@@ -10,6 +10,7 @@
 			}
 			CurrentUser.prototype.set = function(user) { // attaching further functionality onto the prototype chain
 				this.currentUser = user;
+				// JSON.stringify converts a JS value to a JSON string:
 				$window.localStorage.setItem('currentUser', JSON.stringify(user));
 			};
 			CurrentUser.prototype.get = function() { // attaching further functionality onto the prototype chain
