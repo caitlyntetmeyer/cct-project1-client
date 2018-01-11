@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="project1">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Bisexual Apparel</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bisexual Apparel</title>
 
-		<!-- Bower, Bootstrap -->
-		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/content/app.css">
-		
-		<!-- <link rel="stylesheet" href="global.css">  -->
-		<link rel="stylesheet" href="reset.css"> 
-		<link rel="stylesheet" type="text/css" href="project1.css">
+	<!-- Bower (package manager), Bootstrap -->
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/content/app.css">
 
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="global.css">  -->
+	<link rel="stylesheet" href="reset.css"> 
+	<link rel="stylesheet" type="text/css" href="project1.css">
 
-		<!-- jQuery -->
-		<script
- 		 src="https://code.jquery.com/jquery-3.2.1.min.js"
- 		 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
- 		 crossorigin="anonymous"></script>
- 		<!-- jQuery UI -->
- 		<script
-		 src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-		 integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-		 crossorigin="anonymous"></script>
-	</head>
-	
-	<body>	
-		<div class="page-wrap">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<!-- jQuery UI (collection of GUI widgets, animated visual effects, and themes) -->
+	<script
+	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	crossorigin="anonymous"></script>
+</head>
+
+<body>	
+	<div class="page-wrap">
 		<header>
 			<div class="contentWrapper">
-			    <!-- Login Menu -->
-				<nav id="utilityMenu">
-					<ul>
-						<li><a href="#"><img src="img/facebook_20.png" alt="Facebook" border="0" class="socialIcon"></a></li>
-						<li><a href="#"><img src="img/twitter_20.png" alt="Twitter" border="0" class="socialIcon"></a></li>
-						<li><a href="#"><img src="img/google_plus_20.png" alt="Google Plus" border="0" class="socialIcon"></a></li>
-						<li class="acctNav"><a href="#" class="active">Login</a></li>
-						<li class="acctNav"><a href="#">My Cart</a></li>
-						<li><input type="search" id="search" placeholder="Search"></li>
-					</ul>
-				</nav>
-			
-			    <!-- Navigation Menu -->
+
+				<!-- Navigation Menu -->
 				<h1>Bisexual Apparel</h1>
 				<nav>
 					<ul>
@@ -56,49 +45,48 @@
 					</ul>
 				</nav>
 
-				<!-- Is this in the right spot? -->
 				<userlinks></userlinks>
 
 			</div>
 		</header>
 
-				<div ui-view></div>			
+		<div ui-view></div>			
 
-				<!-- Content will be put here: -->
-				<div class="container">
-				</div> <!-- /.container -->
-		</div>
+		<!-- Content will be put here: -->
+		<div class="container">
+		</div> <!-- /.container -->
+	</div>
 
-		<div class="clear">
-			<footer class="site-footer">
-				<!-- Legal & Navigational Items -->
+	<div class="clear">
+		<footer class="site-footer">
+			<!-- Legal & Navigational Items -->
 			
-				<ul>
-					<li>&copy;2017</li>
-					<li><a href="#">Sitemap</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Terms of Use</a></li>
-					<li>Website by Caitlyn</li>
-				</ul>
-			</footer>
-		</div>
+			<ul>
+				<li>&copy;2017</li>
+				<li><a href="#">Sitemap</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Terms of Use</a></li>
+				<li>Website by Caitlyn Tetmeyer</li>
+			</ul>
+		</footer>
+	</div>
 
-		<script src="bower_components/angular-loader/angular-loader.min.js"></script>
-		<script src="bower_components/angular/angular.min.js"></script>
-		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- <script src="bower_components/angular-socket-io/socket.js"></script> -->
-		<!-- <script src="//localhost:3000/socket.io.js"></script> -->
-<!-- 		<script src="app.js"></script> -->
-		<script src="content/bundle.js"></script>
-		
-		<!-- JavaScript -->
-		<script
-	  	src="https://code.jquery.com/jquery-3.2.1.min.js"
-	 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	  	crossorigin="anonymous"></script>
+	<script src="bower_components/angular-loader/angular-loader.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- <script src="bower_components/angular-socket-io/socket.js"></script> -->
+	<!-- <script src="//localhost:3000/socket.io.js"></script> -->
+	<!-- 		<script src="app.js"></script> -->
+	<script src="content/bundle.js"></script>
 
-	</body>
+	<!-- JavaScript -->
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+</body>
 
 </html>
