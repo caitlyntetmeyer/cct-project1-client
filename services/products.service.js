@@ -38,7 +38,6 @@
 			};
 			// .getProducts returns data types so they can be used in multiple controllers:
 			productsService.getProducts = function() {
-				console.log("test");
 				return productsService.shirts;
 			};
 

@@ -1,5 +1,3 @@
-// For 2nd sprint, change this file to create a product.
-
 (function() {
 	angular.module('project1.create', [
 		'ui.router'
@@ -15,7 +13,7 @@
 				controller: createController,
 				controllerAs: 'ctrl',
 				bindToController: this,
-				// Resolve is built in to Angular as a function that executes code prior to going to that route:
+				// resolve is built in to Angular as a function that executes code prior to going to that route:
 				resolve: [
 					// Run functions to ensure that a user's actually logged in:
 					'SessionToken', '$q', '$state',
